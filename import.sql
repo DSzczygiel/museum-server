@@ -1,0 +1,1 @@
+insert into museum.ticket_prices values(10, 5);

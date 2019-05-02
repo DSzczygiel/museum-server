@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:remove="all">MuseumSystem</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+body {
+	margin: 0;
+}
+
+.logo {
+	color: white;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 26px;
+	color: #1e152a;
+}
+
+.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	background: #efefef;
+	padding: 0.5em;
+	text-decoration: none;
+	color: white;
+	background: #0095cc;
+	padding: 0.5em;
+	border-radius: 25px;
+}
+
+.content {
+	padding-bottom: 2em;
+}
+
+.info {
+	padding-bottom: 0.5em;
+	font-size: 10px;
+}
+
+.link {
+	font-size: 6px;
+}
+
+table {
+	border: 2px solid #0095cc;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+</head>
+<body style="margin: 0;">
+	<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#efefef"
+		style="border: 2px solid #0095cc; max-width: 500px; margin-left: auto; margin-right: auto; table-layout: fixed;">
+		<tr bgcolor="3581b8">
+			<td height="50" align="center"><div class="logo"
+					style="color: white; font-size: 26px; font-weight: bold;">MuseumSystem</div></td>
+		</tr>
+		<tr bgcolor="efefef">
+			<td height="50" align="center"><div class="title"
+					th:text="#{email.header} + ' ' + ${name} + '!'"
+					style="font-weight: bold; font-size: 26px; color: #1e152a;">header</div></td>
+		</tr>
+		<tr bgcolor="efefef">
+			<td height="50" align="center"><div class="content"
+					th:text="#{email.message.activate}" style="padding-bottom: 0.5em;">content</div></td>
+		</tr>
+		<tr bgcolor="efefef">
+			<td height="50" align="center"><a th:href="@{${link}}"
+				class="button"
+				style="-webkit-appearance: button; -moz-appearance: button; appearance: button; background: #0095cc; padding: 0.5em; text-decoration: none; color: white; border-radius: 25px;"
+				th:text="#{email.button.activate}">Aktywuj</a></td>
+		</tr>
+		<tr bgcolor="efefef">
+			<td height="10" align="center"><div class="info"
+					th:text="#{email.message.copylink}"
+					style="padding-bottom: 0.5em; font-size: 10px;">content</div></td>
+		</tr>
+		<tr bgcolor="efefef">
+			<td height="20"  align="center"><div class="link"
+					th:text="${link}"
+					style="margin-left:5em; margin-right: 5em; padding-bottom: 1em; font-size: 6px; word-wrap:break-word">content</div></td>
+		</tr>
+	</table>
+</body>
+</html>
